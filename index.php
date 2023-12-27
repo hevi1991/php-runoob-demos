@@ -154,6 +154,58 @@
     }
     test_const();
     ?>
+
+    <h1>字符串</h1>
+    <?php
+    $txt = "Hello world!";
+    echo $txt;
+    echo "<br/>";
+    // 用.串联字符串
+    $txt2 = "what a nice day!";
+    echo $txt . " " . $txt2 . "<br/>";
+    // 查询字符串长度
+    echo "length: " . strlen("Hello world!") . "<br/>";
+    // 查询字符串下标
+    echo "world start with index: " . strpos("Hello world!", "world");
+    ?>
+
+    <h1>运算符</h1>
+    <?php
+    // 字符串使用.相加
+    echo "abc" . "def" . "<br/>";
+
+    // 整除 intdiv(被除数, 除数) 返回向下取整的结果
+    echo intdiv(10, 3);
+    echo "<br/>";
+
+    // 数组运算符
+    $x = array('a' => 'red', 'b' => 'green');
+    $y = array('c' => 'blue', 'd' => 'yellow');
+    // 数组键值对相等
+    var_dump($x == $y);
+    // 数组键值对且顺序相等
+    var_dump($x === $y);
+    // 数组不相等
+    var_dump($x != $y);
+    // 数组相加
+    $z = $x + $y;
+    echo var_dump($z);
+
+    // 三元运算符
+    // 除了【条件?真返回:假返回】之外，还
+    // 可以省略条件返回值的中值
+    // $v = $c ?: 'novalue';
+    
+    // 组合比较符 PHP7+
+    $a = 1;
+    $b = 2;
+    // 大于则为1，等于为0，小于为-1
+    $d = $a <=> $b; // -1
+    $e = $a <=> $d; // 0
+    $f = $b <=> $a; // 1
+    
+    // 条件优先级，建议使用括号，增加可读性
+    ?>
 </body>
 
 </html>
